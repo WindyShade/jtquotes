@@ -5,6 +5,15 @@ body {
 	color: #1a1a1a;
 }
 
+a, a:active, a:focus {
+	color: white;
+}
+
+a:hover {
+	color: #f4bcbf;
+	text-decoration: none;
+}
+
 .quote {
 	margin: 0 auto;
 	max-width: 960px;
@@ -78,7 +87,7 @@ h2 {
     font-family: 'Myriad Set Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-.year {
+#year {
 	color: #f4bcbf;
 }
 

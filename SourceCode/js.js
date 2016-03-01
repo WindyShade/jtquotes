@@ -28,27 +28,31 @@ $(document).ready(function () {
 				var hasUnopennedTab = false;
 				chrome.tabs.query({ url: url }, function(results) {
 
-					var isActive = false;
+					chrome.tabs.create({active: false, url: url });
+					// var isActive = false;
 
-			    	if (results.length == 0) {
-			    		if (!hasUnopennedTab) {
-			    			isActive = true;
-				    		hasUnopennedTab = true;	
-			    		}
+			  //   	if (results.length == 0) {
+			  //   		if (!hasUnopennedTab) {
+			  //   			isActive = true;
+				 //    		hasUnopennedTab = true;	
+			  //   		}
 			    		
-			    		chrome.tabs.create({active: isActive, url: url });
-			    	}
+			  //   		chrome.tabs.create({active: isActive, url: url });
+			  //   	}
 			    });
 
-				if (i == bookmarks.length-1) {
-					chrome.tabs.getCurrent(function(tab) {
-						chrome.tabs.remove(tab.id);
-					});
-				}
+				// if (i == bookmarks.length-1) {
+				// 	chrome.tabs.getCurrent(function(tab) {
+				// 		chrome.tabs.remove(tab.id);
+				// 	});
+				// }
 			});
 		});
 	}
 
+
+	$('#year').text(moment().format('YYYY'))
+	$('#month').text(moment().format('MMMM'))
 	// $(document).bind('keydown', 'ctrl+j', openAllBookmarks);
 	// $('#btn-go').click(openAllBookmarks);
 	// $(document).bind('keydown', 't', openAllBookmarks);
