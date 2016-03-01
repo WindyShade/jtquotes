@@ -3,6 +3,7 @@
 Quotes with clean UI design for new chrome tab.
 
 ![Screenshot](./screenshot.jpeg)
+![Screenshot-Options](./screenshot-1280-options.jpeg)
 
 ## Install
 
