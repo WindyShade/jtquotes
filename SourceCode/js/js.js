@@ -1,5 +1,11 @@
 $(document).ready(function () {
 
+	// Clock
+	var clock = $('.clock').FlipClock({
+		clockFace: 'TwentyFourHourClock'
+	});
+
+	// Quote
 	function updateQuote() {
 		$.get("http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=",
 			function(data) {
@@ -10,11 +16,26 @@ $(document).ready(function () {
 			});
 	}
 
-	var clock = $('.clock').FlipClock({
-		clockFace: 'TwentyFourHourClock'
-	});
+	chrome.storage.sync.get({
+		author: "",
+		quote: ""
 
-	updateQuote();
+	}, function(items) {
+		// Update status to let user know options were saved.
+		if (!items.quote || items.length === 0) {
+			updateQuote();
+
+		} else {
+			$(".header h1").html(items.quote);
+
+			if (items.author && items.author.length > 0) {
+				$(".header h2").html("— " + items.author);
+
+			} else {
+				$(".header h2").html("");
+			}
+		}
+	});
 
 	function openAllBookmarks() {
 		chrome.bookmarks.getSubTree("95", function(results) {
@@ -51,8 +72,9 @@ $(document).ready(function () {
 	}
 
 
-	$('#year').text(moment().format('YYYY'))
-	$('#month').text(moment().format('MMMM'))
+	$('#year').text(moment().format('YYYY'));
+	$('#month').text(moment().format('MMM'));
+	$('#date').text(moment().format('D')+' ');
 	// $(document).bind('keydown', 'ctrl+j', openAllBookmarks);
 	// $('#btn-go').click(openAllBookmarks);
 	// $(document).bind('keydown', 't', openAllBookmarks);
