@@ -3,7 +3,7 @@
 
   "name": "JTQuotes Start Page",
   "description": "Quotes with clean UI design for new chrome tab.",
-  "version": "1.0",
+  "version": "1.0.1",
 
   "chrome_url_overrides" : {
     "newtab": "JTQuotes.html"

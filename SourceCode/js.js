@@ -6,7 +6,7 @@ $(document).ready(function () {
 				// console.log(data);
 				var aQuote = data[0];
 				$(".header h1").html(aQuote.content);
-				$(".header h2").html("——"+aQuote.title);
+				$(".header h2").html("— "+aQuote.title);
 			});
 	}
 
@@ -51,5 +51,5 @@ $(document).ready(function () {
 
 	// $(document).bind('keydown', 'ctrl+j', openAllBookmarks);
 	// $('#btn-go').click(openAllBookmarks);
-	$(document).bind('keydown', 't', openAllBookmarks);
+	// $(document).bind('keydown', 't', openAllBookmarks);
 });
