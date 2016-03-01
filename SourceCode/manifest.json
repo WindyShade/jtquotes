@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+
+  "name": "JTQuotes Start Page",
+  "description": "Quotes with clean UI design for new chrome tab.",
+  "version": "1.0",
+
+  "chrome_url_overrides" : {
+    "newtab": "JTQuotes.html"
+  },
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "bookmarks",
+    "http://quotesondesign.com/"
+  ],
+  "icons": { 
+  	"16": "Icon_16.png",
+	"48": "Icon_48.png",
+	"128": "Icon_128.png" 
+	}
+}
